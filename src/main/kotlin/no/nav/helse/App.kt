@@ -9,6 +9,8 @@ import io.ktor.client.features.json.JacksonSerializer
 import io.ktor.client.features.json.JsonFeature
 import no.nav.helse.rapids_rivers.RapidApplication
 import no.nav.helse.rapids_rivers.RapidsConnection
+import org.apache.kafka.clients.producer.KafkaProducer
+import java.util.Properties
 
 internal val objectMapper: ObjectMapper = jacksonObjectMapper()
     .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
@@ -24,11 +26,11 @@ fun launchApplication(
     environment: Map<String, String>,
     serviceUser: ServiceUser
 ): RapidsConnection {
-
-    val stsRestClient = StsRestClient(environment.getValue("STS_BASE_URL"), serviceUser)
+    val kafkaConfig: Properties = TODO()
+    val leesahProducer = KafkaProducer<String, String>(kafkaConfig)
 
     return RapidApplication.create(environment).apply {
-//        Foreldrepenger(this, fpsakRestClient)
+        UtbetalingEventMessage(this, leesahProducer)
     }
 }
 
