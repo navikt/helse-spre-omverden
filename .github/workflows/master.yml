@@ -5,9 +5,9 @@ on:
     branches:
       - master
 env:
-  APP: sputnik
+  APP: spre-omverden
   TEAM: tbd
-  IMAGE: docker.pkg.github.com/${{ github.repository }}/sputnik
+  IMAGE: docker.pkg.github.com/${{ github.repository }}/spre-omverden
 jobs:
   build:
     runs-on: ubuntu-latest

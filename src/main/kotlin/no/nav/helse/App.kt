@@ -1,4 +1,4 @@
-package no.nav.helse.sputnik
+package no.nav.helse
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
@@ -26,14 +26,9 @@ fun launchApplication(
 ): RapidsConnection {
 
     val stsRestClient = StsRestClient(environment.getValue("STS_BASE_URL"), serviceUser)
-    val fpsakRestClient = FpsakRestClient(
-        baseUrl = environment.getValue("FPSAK_BASE_URL"),
-        httpClient = simpleHttpClient(),
-        stsRestClient = stsRestClient
-    )
 
     return RapidApplication.create(environment).apply {
-        Foreldrepenger(this, fpsakRestClient)
+//        Foreldrepenger(this, fpsakRestClient)
     }
 }
 

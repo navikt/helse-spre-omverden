@@ -1,4 +1,4 @@
-package no.nav.helse.sputnik
+package no.nav.helse.`spre-omverden`
 
 import io.mockk.every
 import io.mockk.mockk

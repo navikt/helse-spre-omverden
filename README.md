@@ -1,7 +1,7 @@
-# helse-sputnik
+# helse-spre-omverden
 
 ## Beskrivelse
-Sputnik aggregerer og persisterer informasjon fra eksterne systemer for å løse behov fra spleis.
+Deler vedtaksdata med omverden
 
 ## Kjøretidsavhengigheter
 
